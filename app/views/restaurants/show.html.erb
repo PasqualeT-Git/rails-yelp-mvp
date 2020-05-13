@@ -1,0 +1,13 @@
+<div class="card mt-2 ml-5 mr-5 p-1 shadow-sm rounded-lg" >
+  <h1 style="font-family: serif;"><%= @restaurant.name %> reviews:</h1>
+</div>
+
+<% @restaurant.reviews.each do |review| %>
+  <div class="card mt-2 ml-5 mr-5 p-1 shadow-sm rounded-lg">
+    <ul style="list-style: none; display: flex;">
+        <li><%= review.content %></li>
+    </ul>
+  </div>
+<% end %>
+
+<%= link_to "Add a new review", new_restaurant_review_path(@restaurant), class: "btn btn-primary mt-3 ml-5" %>
